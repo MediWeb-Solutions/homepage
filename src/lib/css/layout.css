@@ -1,0 +1,9 @@
+@layer layout {
+    /* Layout rules (e.g. containers, grid, navigation layouts) */
+    .container {
+        width: 100%;
+        max-width: 1200px;         /* Caps growth on large displays */
+        margin-inline: auto;       /* Centers container horizontally */
+        padding-inline: 1.5rem;    /* Prevents content touching screen edges */
+    }
+}

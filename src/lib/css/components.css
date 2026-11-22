@@ -1,0 +1,116 @@
+@layer components {
+    @layer navbar {
+        .topnav{
+            inline-size: 100%;
+            padding: 1rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-box{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        ul[role="navigation"] {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-navigation{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .main-navigation > li {
+            position: relative;
+        }
+
+        .sub-navigation {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            display: none;
+            z-index: 10;
+        }
+
+        .sub-navigation li {
+            margin: 0.5rem 0;
+        }
+
+        .sub-navigation a {
+            color: var(--color-primary-foreground);
+            text-decoration: none;
+        }
+
+        .main-navigation > li:hover > .sub-navigation {
+            display: block;
+        }
+    }
+
+    @layer hero {
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            height: 50dvh;
+            width: 100%;
+        }
+    }
+
+    @layer buttons {
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            border: none;
+            text-decoration: none;
+        }
+    
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-primary-foreground);
+        }
+    
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+    
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: var(--color-secondary-foreground);
+        }
+    
+        .btn-secondary:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+}

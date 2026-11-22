@@ -1,0 +1,241 @@
+/* Variables sourced from Glow UI: https://glowui.com */
+
+@layer base {
+  @layer primitives {
+
+    @layer utilities {
+      :root {
+          --white: oklch(100% 0 0);
+          --black: oklch(0% 0 0);
+          --transparent: oklch(100% 0 0 / 0%);
+      }
+
+      @layer light {
+        @layer grays {
+          @layer gray {
+            :root {
+              --light-grays-gray-25: oklch(99.1% 0 0);
+              --light-grays-gray-50: oklch(97.6% 0 0);
+              --light-grays-gray-100: oklch(94.7% 0 0);
+              --light-grays-gray-200: oklch(94.6% 0 0);
+              --light-grays-gray-300: oklch(93.1% 0 0);
+              --light-grays-gray-400: oklch(91.6% 0 0);
+              --light-grays-gray-500: oklch(89.1% 0 0);
+              --light-grays-gray-600: oklch(83% 0 0);
+              --light-grays-gray-700: oklch(65% 0 0);
+              --light-grays-gray-800: oklch(61.7% 0 0);
+              --light-grays-gray-900: oklch(54.5% 0 0);
+              --light-grays-gray-950: oklch(20.5% 0 0);
+            }
+          }
+
+          @layer slate {
+            :root {
+              --light-grays-slate-25: oklch(99.1% 0.001 286.4);
+              --light-grays-slate-50: oklch(98.5% 0.002 247.8);
+              --light-grays-slate-100: oklch(96% 0.003 247.9);
+              --light-grays-slate-200: oklch(94.5% 0.003 247.9);
+              --light-grays-slate-300: oklch(93% 0.005 258.3);
+              --light-grays-slate-400: oklch(91.4% 0.005 247.9);
+              --light-grays-slate-500: oklch(89% 0.007 247.9);
+              --light-grays-slate-600: oklch(82.9% 0.01 238.5);
+              --light-grays-slate-700: oklch(64.9% 0.013 240);
+              --light-grays-slate-800: oklch(61.5% 0.014 236.8);
+              --light-grays-slate-900: oklch(54.4% 0.013 240.1);
+              --light-grays-slate-950: oklch(20.4% 0.013 233.3);
+            }
+          }
+
+          @layer mauve {
+            :root {
+              --light-grays-mauve-25: oklch(99.2% 0.002 325.6);
+              --light-grays-mauve-50: oklch(97.7% 0.002 325.6);
+              --light-grays-mauve-100: oklch(96% 0.003 325.6);
+              --light-grays-mauve-200: oklch(94.4% 0.003 308.4);
+              --light-grays-mauve-300: oklch(92.9% 0.003 308.4);
+              --light-grays-mauve-400: oklch(91.5% 0.003 325.6);
+              --light-grays-mauve-500: oklch(89% 0.003 308.4);
+              --light-grays-mauve-600: oklch(83.2% 0.007 295.4);
+              --light-grays-mauve-700: oklch(64.8% 0.013 296.2);
+              --light-grays-mauve-800: oklch(62.1% 0.014 296.2);
+              --light-grays-mauve-900: oklch(55.2% 0.013 296);
+              --light-grays-mauve-950: oklch(22.8% 0.012 296.2);
+            }
+          }
+
+          @layer cyan {}
+          @layer emerald {}
+          @layer fuchsia {}
+          @layer gray {}
+          @layer green {}
+          @layer indigo {}
+          @layer lime {}
+          @layer orange {}
+          @layer pink {}
+          @layer purple {}
+          @layer red {}
+          @layer rose {}
+          @layer sapphire {}
+          @layer sky {}
+          @layer teal {}
+          @layer violet {}
+          @layer yellow {}
+          @layer zinc {}
+        }
+      }
+    }
+  }
+}
+
+:root {
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0 0 0);
+
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0 0 0);
+
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0 0 0);
+
+  --color-primary: #000;
+  --color-primary-foreground: #FFF;
+
+  --color-secondary: #666;
+  --color-secondary-foreground: #FFF;
+
+  --color-muted: #eee;
+  --color-muted-foreground: #666;
+
+  --color-accent: #ddd;
+  --color-accent-foreground: #000;
+
+  --color-destructive: #000;
+  --color-destructive-foreground: #FFF;
+
+  --color-border: #ddd;
+  --color-input: #ddd;
+  --color-ring: #000;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+  --color-background: #0f0f0f;
+  --color-foreground: #eee;
+
+  --color-card: #1a1a1a;
+  --color-card-foreground: #eee;
+
+  --color-popover: #1a1a1a;
+  --color-popover-foreground: #eee;
+
+  --color-primary: #eee;
+  --color-primary-foreground: #0f0f0f;
+
+  --color-secondary: #333;
+  --color-secondary-foreground: #eee;
+
+  --color-muted: #2a2a2a;
+  --color-muted-foreground: #aaa;
+
+  --color-accent: #333;
+  --color-accent-foreground: #eee;
+
+  --color-destructive: #eee;
+  --color-destructive-foreground: #0f0f0f;
+
+  --color-border: #333;
+  --color-input: #333;
+  --color-ring: #eee;
+
+  --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+/* Paragraphs and text */
+p {
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.brand{
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--color-primary);
+}

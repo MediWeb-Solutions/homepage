@@ -1,0 +1,8 @@
+@layer reset, base, layout, theme, components, utilities;
+
+@import '$lib/css/reset.css';
+@import '$lib/css/base.css';
+@import '$lib/css/layout.css';
+@import '$lib/css/theme.css';
+@import '$lib/css/components.css';
+@import '$lib/css/utilities.css';

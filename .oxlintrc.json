@@ -1,0 +1,13 @@
+{
+  "ignorePatterns": [".svelte-kit/**", "build/**", "node_modules/**"],
+  "globals": {
+    "$state": "readonly",
+    "$derived": "readonly",
+    "$effect": "readonly",
+    "$props": "readonly",
+    "$bindable": "readonly",
+    "$inspect": "readonly",
+    "$host": "readonly",
+    "$auth": "readonly"
+  }
+}

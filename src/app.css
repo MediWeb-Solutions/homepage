@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: 'Geist', system-ui, sans-serif; color-scheme: dark; }
+  body { background-color: #0A1416; color: #E6ECEA; }
+  h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.03em; color: #E6ECEA; }
+  ::selection { background: #5FD4B4; color: #0A1416; }
+  :focus-visible { outline: 2px solid #5FD4B4; outline-offset: 2px; border-radius: 6px; }
+}
+
+@layer components {
+  .container-rhythm { @apply mx-auto max-w-6xl px-6 md:px-10; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-xs font-medium text-mint tracking-wide; }
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-line2 bg-panel px-3 py-1 text-xs text-muted;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-mint px-5 py-2.5 text-sm font-medium text-ink
+           transition-[background-color,transform] duration-200 hover:bg-mint-soft active:scale-[0.98]
+           disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line2 bg-panel/40 px-5 py-2.5 text-sm font-medium text-fg
+           transition-[border-color,background-color] duration-200 hover:border-muted/60 hover:bg-panel;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-panel p-7 transition-[border-color,transform] duration-300;
+  }
+  .card-hover { @apply hover:border-line2 hover:-translate-y-0.5; }
+  .field-label { @apply text-xs font-medium text-muted; }
+  .field {
+    @apply mt-1.5 w-full rounded-lg border border-line2 bg-ink px-3.5 py-2.5 text-sm text-fg placeholder:text-muted/60
+           transition-[border-color] duration-200 focus:border-mint focus:outline-none;
+  }
+  .link-underline {
+    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-current
+           after:transition-[width] after:duration-300 hover:after:w-full;
+  }
+  .section-title { @apply text-3xl md:text-4xl font-semibold tracking-tight; }
+  .lead { @apply text-lg leading-relaxed text-muted; }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.rise-delay-1 { animation-delay: 0.08s; }
+.rise-delay-2 { animation-delay: 0.16s; }
+.rise-delay-3 { animation-delay: 0.24s; }
+
+@keyframes fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.bar-fill { transform-origin: left; animation: fill 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
+
+.hero-glow {
+  background: radial-gradient(600px 320px at 70% 20%, rgba(95, 212, 180, 0.10), transparent 70%);
+}
+.grid-faint {
+  background-image: linear-gradient(#1E2C30 1px, transparent 1px), linear-gradient(90deg, #1E2C30 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 20%, transparent 70%);
+}

@@ -5,7 +5,9 @@
 <footer class="mt-28 border-t border-line">
   <div class="container-rhythm py-14 grid gap-10 md:grid-cols-4">
     <div class="md:col-span-2">
-      <Logo />
+      <a href="/">
+        <Logo class="h-14 w-auto" />
+      </a>
       <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">
         Webutvikling, legetjenester og kurs — levert av et lite norsk foretak med direkte kontakt og høy faglig standard.
       </p>

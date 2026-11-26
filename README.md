@@ -41,6 +41,27 @@ For production, build with `pnpm build` and run the adapter-node server with
 variables to the server process, and set `BETTER_AUTH_URL` to the public HTTPS
 origin.
 
+## Coolify deployment
+
+Create a Coolify application from this repository and use the included
+`Dockerfile` as its build pack. Expose container port `3000`; the server binds
+to `0.0.0.0` and uses the `PORT` environment variable.
+
+Provide these application environment variables in Coolify:
+
+- `DATABASE_URL`: connection string for a PostgreSQL service reachable over
+  Coolify's private network. Do not use `localhost` for a separate database
+  service.
+- `BETTER_AUTH_URL`: the app's public HTTPS URL.
+- `BETTER_AUTH_SECRET`: a unique secret of at least 32 characters.
+- `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` if enabling payments.
+- `EMERGENT_EMAIL_KEY`, `EMAIL_FROM_NAME`, and `CONTACT_ALERT_EMAIL` if
+  enabling contact notifications. `EMAIL_REPLY_TO` is optional.
+
+Apply database migrations with `pnpm db:migrate` against the production
+database before deploying changes that require them. The production image
+does not run migrations automatically.
+
 ## Payments and email
 
 Configure `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` for Stripe Checkout.

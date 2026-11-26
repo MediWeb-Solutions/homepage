@@ -55,8 +55,8 @@ Provide these application environment variables in Coolify:
 - `BETTER_AUTH_URL`: the app's public HTTPS URL.
 - `BETTER_AUTH_SECRET`: a unique secret of at least 32 characters.
 - `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` if enabling payments.
-- `EMERGENT_EMAIL_KEY`, `EMAIL_FROM_NAME`, and `CONTACT_ALERT_EMAIL` if
-  enabling contact notifications. `EMAIL_REPLY_TO` is optional.
+- `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `RESEND_TO_CONTACT_EMAIL` if
+  enabling contact notifications. Use a sender address verified in Resend.
 
 Apply database migrations with `pnpm db:migrate` against the production
 database before deploying changes that require them. The production image
@@ -69,5 +69,6 @@ The webhook endpoint is `/api/stripe/webhook`. Checkout sessions create the
 course product and price in Stripe if they do not already exist.
 
 Contact submissions are stored in PostgreSQL. To send owner notifications,
-configure `EMERGENT_EMAIL_KEY`, `EMAIL_FROM_NAME`, and `CONTACT_ALERT_EMAIL`;
-email delivery failures are recorded on the contact message.
+configure `RESEND_API_KEY`, `RESEND_FROM_EMAIL` (a sender address verified in
+Resend), and `RESEND_TO_CONTACT_EMAIL`; email delivery failures are recorded on
+the contact message. Replies to notifications are addressed to the submitter.

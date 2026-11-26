@@ -21,8 +21,8 @@ export async function sendContactAlert(message: {
   service: string | null;
   message: string;
 }) {
-  const { EMERGENT_EMAIL_KEY, EMAIL_FROM_NAME, CONTACT_ALERT_EMAIL } = env;
-  if (!EMERGENT_EMAIL_KEY || !EMAIL_FROM_NAME || !CONTACT_ALERT_EMAIL) {
+  const { RESEND_API_KEY, RESEND_FROM_EMAIL, RESEND_TO_CONTACT_EMAIL } = env;
+  if (!RESEND_API_KEY || !RESEND_FROM_EMAIL || !RESEND_TO_CONTACT_EMAIL) {
     throw new Error('Contact email is not configured.');
   }
 
@@ -38,20 +38,20 @@ export async function sendContactAlert(message: {
     `<h1 style="margin:8px 0 0;font-size:20px;color:#E6ECEA">${name} har sendt en melding</h1></td></tr>` +
     `<tr><td style="padding:16px 32px"><table role="presentation" width="100%" style="font-size:14px;color:#8A9A97"><tr><td style="padding:4px 0;width:90px">Navn</td><td style="color:#E6ECEA">${name}</td></tr><tr><td style="padding:4px 0">E-post</td><td><a href="mailto:${email}" style="color:#5FD4B4">${email}</a></td></tr><tr><td style="padding:4px 0">Tjeneste</td><td style="color:#E6ECEA">${service}</td></tr></table></td></tr>` +
     `<tr><td style="padding:8px 32px 24px"><div style="background:#0A1416;border:1px solid #1E2C30;border-radius:8px;padding:16px;font-size:14px;line-height:1.6;color:#E6ECEA">${content}</div></td></tr>` +
-    `<tr><td style="padding:0 32px 28px;font-size:12px;color:#8A9A97">Svar ved å skrive til ${email}. Sendt automatisk av ${escapeHtml(EMAIL_FROM_NAME)} sitt kontaktskjema.</td></tr></table></td></tr></table>`;
+    `<tr><td style="padding:0 32px 28px;font-size:12px;color:#8A9A97">Svar ved å skrive til ${email}. Sendt automatisk via MediWeb Solutions sitt kontaktskjema.</td></tr></table></td></tr></table>`;
 
-  const response = await fetch('https://integrations.emergentagent.com/api/v1/email/send', {
+  const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Email-Key': EMERGENT_EMAIL_KEY
+      Authorization: `Bearer ${RESEND_API_KEY}`
     },
     body: JSON.stringify({
-      to: [CONTACT_ALERT_EMAIL],
+      from: RESEND_FROM_EMAIL,
+      to: [RESEND_TO_CONTACT_EMAIL],
       subject,
       html,
-      from_name: EMAIL_FROM_NAME,
-      ...(env.EMAIL_REPLY_TO ? { contact_email: env.EMAIL_REPLY_TO } : {})
+      reply_to: message.email
     }),
     signal: AbortSignal.timeout(30_000)
   });
@@ -69,8 +69,8 @@ export async function sendContactAlert(message: {
   }
   if (!response.ok) {
     const code =
-      result && typeof result === 'object' && 'code' in result && typeof result.code === 'string'
-        ? result.code
+      result && typeof result === 'object' && 'name' in result && typeof result.name === 'string'
+        ? result.name
         : `http_${response.status}`;
     throw new Error(`Contact email provider returned ${code}.`);
   }

@@ -31,13 +31,9 @@
       <h1 class="rise rise-delay-1 mt-4 text-4xl md:text-5xl leading-[1.08]">Fortell oss om oppdraget.</h1>
       <p class="rise rise-delay-2 lead mt-5">Send en melding, så hører du fra oss.</p>
       <ul class="mt-10 space-y-4">
-        <li class="flex items-center gap-3">
-          <span class="grid h-9 w-9 place-items-center rounded-lg border border-line2 bg-panel"><Mail size={16} class="text-mint" /></span>
-          <a href="mailto:post@mediweb.no" class="link-underline">post@mediweb.no</a>
-        </li>
         <li class="flex items-center gap-3 text-muted">
           <span class="grid h-9 w-9 place-items-center rounded-lg border border-line2 bg-panel"><Clock size={16} class="text-mint" /></span>
-          Vi svarer vanligvis innen én virkedag
+          Vi svarer vanligvis innen 1-2 virkedager
         </li>
       </ul>
     </div>

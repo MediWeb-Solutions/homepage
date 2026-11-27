@@ -24,7 +24,6 @@
     <div>
       <div class="text-xs font-medium text-fg mb-4">Kontakt</div>
       <ul class="space-y-2.5 text-sm text-muted">
-        <li><a href="mailto:post@mediweb.no" class="hover:text-fg transition-colors">post@mediweb.no</a></li>
         <li><a href="/kontakt" class="hover:text-fg transition-colors">Send en melding</a></li>
       </ul>
     </div>

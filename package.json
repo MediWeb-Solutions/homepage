@@ -31,6 +31,7 @@
   "dependencies": {
     "@better-auth/drizzle-adapter": "^1.7.28",
     "@lucide/svelte": "^1.80.0",
+    "@openpanel/web": "^1.4.4",
     "better-auth": "^1.7.28",
     "bits-ui": "next",
     "drizzle-orm": "^0.45.4",

@@ -29,7 +29,7 @@
 
 <header class="sticky top-0 z-50 border-b border-line bg-ink/80 backdrop-blur-xl">
   <div class="container-rhythm flex h-16 items-center justify-between">
-    <a href="/" data-testid="brand-link"><Logo /></a>
+    <a href="/" data-testid="brand-link"><Logo class="h-16 w-auto" /></a>
 
     <nav class="hidden lg:flex items-center gap-1" aria-label="Hovednavigasjon">
       {#each nav as item}
